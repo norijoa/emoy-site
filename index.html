@@ -14,7 +14,7 @@
 
 <div class="beta-banner">
   <span class="beta-dot" aria-hidden="true"></span>
-  <span>EMOY is on the <a href="https://apps.apple.com/app/id6805184110">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.ajltesting.familycircle">Google Play</a>.</span>
+  <span>EMOY is on the <a href="https://apps.apple.com/app/id6805184110">App Store</a> and <a href="https://play.google.com/store/apps/details?id=com.ajltesting.familycircle">Google Play</a>. AI beta: <a href="#s-new">ask for an invite</a>.</span>
 </div>
 
 <header class="site-header">
@@ -27,6 +27,7 @@
     <ul class="nav-desktop">
       <li><a href="#s-story">Our story</a></li>
       <li><a href="#s-what">What it is</a></li>
+      <li><a href="#s-new">What's new</a></li>
       <li><a href="#s-who">Who sees what</a></li>
       <li><a href="#s-how">How it works</a></li>
       <li><a href="#s-privacy">Privacy</a></li>
@@ -37,6 +38,7 @@
       <ul>
         <li><a href="#s-story">Our story</a></li>
         <li><a href="#s-what">What it is</a></li>
+        <li><a href="#s-new">What's new</a></li>
         <li><a href="#s-who">Who sees what</a></li>
         <li><a href="#s-how">How it works</a></li>
         <li><a href="#s-privacy">Privacy</a></li>
@@ -81,6 +83,7 @@
       <a class="pill pill-solid pill-lg" href="#s-how">See how it works</a>
     </div>
     <p class="badge-note">Free on iPhone and Android.</p>
+    <a class="beta-teaser" href="#s-new"><span class="beta-dot" aria-hidden="true"></span>New: Ask EMOY and Day plan, free in beta&nbsp;&rarr;</a>
   </div>
 
   <div class="hero-cards">
@@ -228,6 +231,69 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- ── 3b. What's new in 1.0.3 ─────────────────────────────────────────── -->
+<!-- Added 2026-10-20 for 1.0.3. Every line is checked against the app and the
+     privacy policy: the chat wording is the beta welcome card's
+     (BetaWelcomeModal.tsx), Day plan's "nothing is sent to an AI model" and the
+     Anthropic sentence are the policy's own, offline is the 2026-10-08 offline
+     spec's D1-D3. The beta is invite-only (Ayden, 2026-10-19: not everyone wants
+     AI, and it keeps costs down), so the CTA is a mail, never a store link.
+     The end date is Ayden's ruling of 2026-10-19 ("until December 6"). When the
+     beta ends or changes, this section changes the same day. -->
+<section class="band" id="s-new">
+  <p class="kicker">What's new in 1.0.3</p>
+  <h2>Ask about your own baby. Plan the day around them.</h2>
+  <p class="lede lede-wide">Two features in a free beta for invited households, built from what your household has already logged. Free while in beta, until December 6.</p>
+
+  <!-- Each beta feature is a row: a muted, looping screen recording in the
+       site's phone frame, beside two lines of copy. Video, not GIF: ~300 KB
+       instead of several MB, sharp text, self-hosted so the privacy claims
+       stay literally true. preload="none" + poster keeps the page light;
+       reduced-motion visitors get the poster only (script at the end).
+       The media in site/media/ was captured 2026-10-20 from the EMOY Demo
+       household only (docs/release.md), never a real one. -->
+  <div class="beta-row">
+    <div class="beta-copy">
+      <p class="card-eyebrow">Beta · invite only</p>
+      <h3>Ask EMOY</h3>
+      <p class="para">Ask about your child's sleep, feeds, diapers, activities, growth or milestones. Answers are short and use what your household has logged. For guardians only, not caregivers or circles.</p>
+      <p class="para">It is not a doctor. When a question needs one, it says so, and Get help is one tap away.</p>
+    </div>
+    <figure class="beta-phone">
+      <div class="phone-bezel"><div class="phone-screen">
+        <video class="phone-shot beta-loop" src="media/beta-chat.mp4" poster="media/beta-chat.jpg" width="760" height="1652" muted loop playsinline preload="none" aria-label="Asking EMOY why the baby is up so early, and the answer it gives from the household's log."></video>
+      </div></div>
+    </figure>
+  </div>
+
+  <div class="beta-row beta-row-flip">
+    <div class="beta-copy">
+      <p class="card-eyebrow">Beta · invite only</p>
+      <h3>Day plan</h3>
+      <p class="para">A plan for today's naps and feeds that follows your child's own rhythm, built from your logs. Tap the bell on any of them for a reminder.</p>
+      <p class="para">It is worked out on your phone, and nothing is sent to an AI model.</p>
+    </div>
+    <figure class="beta-phone">
+      <div class="phone-bezel"><div class="phone-screen">
+        <video class="phone-shot beta-loop" src="media/beta-dayplan.mp4" poster="media/beta-dayplan.jpg" width="760" height="1652" muted loop playsinline preload="none" aria-label="Day plan: the rest of today's naps and feeds, with a reminder set on the afternoon nap."></video>
+      </div></div>
+    </figure>
+  </div>
+
+  <div class="beta-cta">
+    <a class="pill pill-solid pill-lg" href="mailto:support@emoy.app?subject=EMOY%20beta%20invite&amp;body=Hi%2C%20we%27d%20like%20to%20try%20the%20EMOY%20beta.%0A%0APhone%20(iPhone%20or%20Android)%3A%20%0AEMOY%20version%20(Settings%2C%20bottom)%3A%20">Ask for a beta invite</a>
+    <p class="badge-note">Needs EMOY 1.0.3 or later, on iPhone or Android. Screens are from our demo household.</p>
+  </div>
+
+  <div class="card new-offline">
+    <p class="card-eyebrow card-eyebrow-sage">Everyone · 1.0.3</p>
+    <h3>No signal, no problem</h3>
+    <p class="para">Log feeds, sleeps, diapers and activities, start and stop timers, or fix an entry in airplane mode or a basement. It saves on your phone and syncs, in order, when the signal comes back. Photos, videos and the chat wait for a signal.</p>
+  </div>
+
+  <p class="new-note">When a guardian asks EMOY something, the question and a summary of the child's record go to Anthropic, which runs the AI model and may not train on it. <a href="/privacy">The privacy policy</a> says exactly what is sent and how long it is kept.</p>
 </section>
 
 <!-- ── 4. Who sees what ────────────────────────────────────────────────── -->
@@ -392,6 +458,14 @@
       <p class="para">iPhone and Android, from the same record. One of you on each is the normal case, and the one we built for.</p>
     </div>
     <div class="faq-item">
+      <h3>Does it work without signal?</h3>
+      <p class="para">Yes, from version 1.0.3. Anything you log offline keeps the time you tapped it and syncs when you are back online. If two of you changed the same entry, the change made last wins, and the other phone shows a short note. Photos, videos and the chat need a connection.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the beta, and how do I join?</h3>
+      <p class="para">Ask EMOY and Day plan are free while in beta, until December 6, for households we invite. Write to <a href="mailto:support@emoy.app?subject=EMOY%20beta%20invite&amp;body=Hi%2C%20we%27d%20like%20to%20try%20the%20EMOY%20beta.%0A%0APhone%20(iPhone%20or%20Android)%3A%20%0AEMOY%20version%20(Settings%2C%20bottom)%3A%20">support@emoy.app</a> to ask for an invite; you will need EMOY 1.0.3 or later. Not everyone wants AI in a baby app, so nothing turns on unless you ask.</p>
+    </div>
+    <div class="faq-item">
       <h3>What happens to our record if we stop using it?</h3>
       <p class="para">You can delete your account from inside the app, or ask us to do it — the record, the photos and the videos go with it. There is a page on this site that walks through both ways.</p>
     </div>
@@ -448,6 +522,22 @@
     document.hidden ? halt() : run();
   });
   run();
+})();
+</script>
+<script>
+// Beta loops: play only while on screen, never for reduced motion (poster stays).
+(function () {
+  var vids = document.querySelectorAll('video.beta-loop');
+  if (!vids.length) return;
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) { vids.forEach(function (v) { v.preload = 'auto'; v.play().catch(function(){}); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) { v.preload = 'auto'; v.play().catch(function(){}); } else { v.pause(); }
+    });
+  }, { threshold: 0.35 });
+  vids.forEach(function (v) { io.observe(v); });
 })();
 </script>
 </body>

@@ -528,6 +528,43 @@ html { scroll-behavior: smooth; }
   font-family: "Caprasimo", Georgia, serif; font-size: var(--type-3); margin-bottom: 14px;
 }
 
+/* ── 3b. What's new ──────────────────────────────────────────────────────── */
+/* Beta features as rows: copy beside a looping screen in the site's phone
+   frame. The second row flips, so the band reads left-right-left rather than
+   as a grid (slightly asymmetric, like the hero). */
+.beta-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 320px); gap: 48px; align-items: center; margin-top: var(--space-10); max-width: 900px; }
+.beta-row-flip { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); margin-left: auto; }
+.beta-row-flip .beta-phone { order: -1; }
+.beta-copy .card-eyebrow { margin-bottom: 10px; }
+.beta-copy h3 { margin-bottom: 8px; }
+.beta-phone { margin: 0; width: 100%; max-width: 320px; }
+.beta-phone video { background: var(--surface); }
+.beta-cta { margin-top: var(--space-10); }
+.lp .beta-cta .badge-note { margin-top: 12px; }
+.new-offline { margin-top: 32px; max-width: 46em; background: var(--surface); }
+.new-offline h3 { margin: 8px 0 8px; }
+.new-note {
+  margin-top: 24px; padding: 18px 20px; border-radius: 18px;
+  border: 1px solid var(--rule, rgba(60,55,51,.16));
+  font-size: var(--type-body); line-height: 1.65; color: var(--body); max-width: 60em;
+}
+.lp .beta-teaser {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+  padding: 8px 14px; border-radius: 999px; background: var(--surface);
+  font: 600 15px/1.3 "Figtree", sans-serif; color: var(--accent-deep);
+}
+.lp .beta-teaser:hover { color: var(--accent); }
+.beta-teaser .beta-dot { flex: 0 0 auto; }
+/* A phone column (346px on /get at 390) is narrower than the pill at 15px: 14px
+   keeps it on one line there, and the nbsp before the arrow means a narrower
+   phone wraps the words, never the arrow alone. 13px is the site's floor. */
+@media (max-width: 400px) { .lp .beta-teaser { font-size: 14px; padding: 8px 12px; } }
+@media (max-width: 900px) {
+  .beta-row, .beta-row-flip { grid-template-columns: 1fr; gap: 20px; margin-left: 0; }
+  .beta-row-flip .beta-phone { order: 0; }
+  .beta-phone { max-width: 300px; }
+}
+
 /* ── 7. Privacy ──────────────────────────────────────────────────────────── */
 .privacy-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: var(--space-10); }
 .band.ink .card { background: var(--ink-surface); }

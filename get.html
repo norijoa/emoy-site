@@ -115,6 +115,11 @@ body.lp-get{
   flex:none;margin-top:.52em;
 }
 
+/* After the note whatever the platform order; the actions' 16px gap replaces
+   the hero's margin-top. */
+.lp-get .beta-teaser{order:4; margin-top:0}
+.lp-get .beta-teaser:focus-visible{outline:2px solid var(--terra-deep); outline-offset:3px}
+
 .lp-get .claims{
   border-top:1px solid var(--rule); padding-top:22px;
   display:flex; flex-direction:column; gap:7px;
@@ -178,6 +183,10 @@ body.lp-get{
     </a>
 
     <p class="note"><span class="dot"></span><span id="status">Free on iPhone and Android.</span></p>
+
+    <!-- The homepage hero's teaser (Ayden, 2026-10-20), landing on the
+         homepage's "What's new in 1.0.3" band. -->
+    <a class="beta-teaser" href="/#s-new"><span class="beta-dot" aria-hidden="true"></span>New: Ask EMOY and Day plan, free in beta&nbsp;&rarr;</a>
   </div>
 
   <div class="claims">
